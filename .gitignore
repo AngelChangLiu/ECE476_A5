@@ -1,0 +1,9 @@
+target/
+scratch.md
+
+dump/
+__pycache__/
+setup.sh
+**/__pycache__/
+**/profile_data/
+*.ncu-rep

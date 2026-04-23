@@ -1,0 +1,14 @@
+[project]
+name = "assignment5-histogram"
+version = "0.1.0"
+description = "Local CUDA histogram optimization assignment"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "torch",
+    "setuptools",
+    "ninja",
+    "triton",
+    "tilelang",
+]
