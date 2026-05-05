@@ -45,9 +45,23 @@ def custom_kernel(data: input_t) -> output_t:
     #
     # You are allowed to import new modules, etc.
     #
+
+    # array, num_bins = data
+    # if not array.is_cuda:
+    #     array = array.cuda()
+
+    # array = array.contiguous()
+    # return _load_cuda_module().histogram_kernel(array, int(num_bins))
+
+
     array, num_bins = data
+
+    # move input to GPU if needed
     if not array.is_cuda:
         array = array.cuda()
 
+    # keep memory contiguous for CUDA access
     array = array.contiguous()
+
+    # call the CUDA implementation in histogram.cu
     return _load_cuda_module().histogram_kernel(array, int(num_bins))
